@@ -1,6 +1,6 @@
 from flask import Flask, request
 from telegram import Bot, Update
-from telegram.ext import Dispatcher, CommandHandler, MessageHandler, Filters
+from telegram.ext import Dispatcher, CommandHandler
 import os
 
 TOKEN = os.getenv("BOT_TOKEN")
@@ -24,6 +24,3 @@ def webhook():
 @app.route("/", methods=["GET"])
 def index():
     return "Bot is running!", 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
